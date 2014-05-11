@@ -9,8 +9,7 @@
 					src="<c:url value="/resources/web/images/Logo_youyika.png"/>" alt="Whoopes"></a></strong>
 			  <div class="top_nav">
                 <ul class="nav nav-pills">
-                     <li class="active"><a href="<c:url value="/web/partys"/>">Party&nbsp;&nbsp;</a></li>
-                     <li><a href="<c:url value="/web/goods"/>">shop&nbsp; by &nbsp;department</a></li>
+                 <!--     <li class="active"><a href="<c:url value="#"/>">Party&nbsp;&nbsp;</a></li> -->
 				</ul>
              </div>
 			 <div class="top_about">
@@ -31,16 +30,6 @@
 					</c:if>
 				</ul>
              </div>
-      <div class="top_middle">
-	      <form class="navbar-form" action="<c:url value="/web/search"/>">
-		      <select class="form-control categoryType" name="categoryType" >
-	              <option value="1">good</option>
-	              <option value="2">party</option>
-	            </select>
-	          <input type="text" class="form-control navbar-form-width" name="content" required="required">
-	          <button type="submit" class="btn btn-primary">search</button>
-        </form>
-      </div>
              <!-- end container-->
          </div>
          <!-- end container_wrap-->
