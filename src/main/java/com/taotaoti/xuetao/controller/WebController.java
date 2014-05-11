@@ -48,14 +48,14 @@ public class WebController extends BaseController {
 			HttpServletResponse response,
 			@RequestParam(value="curPage",required=false) Integer curPage,
 			@RequestParam(value="pageSize",required=false) Integer pageSize,
-			@RequestParam(value="content") String content,
-			@RequestParam(value="categoryType") Integer categoryType,
+			@RequestParam(value="content",required=false) String content,
+			@RequestParam(value="categoryType",required=false) Integer categoryType,
 			ModelMap model){
 		List<MatchMap> listMaps=new ArrayList<MatchMap>();
 		if(curPage==null) curPage=0;
 		if(pageSize==null) pageSize=12;
 		if(categoryType==null) categoryType=2;
-		return this.buildSuccess(model, "/web/goods", listMaps);
+		return this.buildSuccess(model, "/web/search", listMaps);
 	}
 	
 	
