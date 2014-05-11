@@ -1,0 +1,30 @@
+.nav_member_setting_left{
+	
+}
+.memberInfo{
+	height: 230px;
+	display: block;
+	width: 100%;
+}
+.memberInfo .photo{
+	margin: auto;
+	clear: both;
+	text-align: center;
+}
+.memberInfo .photo img{
+	margin: auto;
+	clear: both;
+	text-align: center;
+}
+.memberInfo .information{
+	clear: both;
+}
+.memberInfo .information .name{
+font: normal 20px/30px "Microsoft Yahei";
+display: block;
+text-align: center;
+
+}
+.memberInfo .information .tags{
+display: block;
+}

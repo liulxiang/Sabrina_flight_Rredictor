@@ -1,0 +1,59 @@
+@CHARSET "UTF-8";
+/* Contact Specific */
+.contact form .formcol {
+	width: 47.058823529412%;
+	float: left;
+	margin-right: 5.882352941176%;
+}
+.contact form .formcol:last-child {
+	margin-right: 0;
+}
+.contact form label {
+	display: block;
+	color: #2f2f2f;
+}
+.contact form input[type=text] {
+	padding: .5em;
+	width: 100%;
+}
+.contact form textarea {
+	width: 100%;
+	padding: .5em;
+	height: 10em;
+}
+.contact form .wpcf7-response-output {
+	margin-bottom: 1em;
+	color: #2f2f2f;
+	font-weight: 700;
+	font-style: italic;
+}
+.contact form img.ajax-loader {
+	display: none;
+}
+.img-location {
+	background: url(../img/icon-location.png) no-repeat 0 7px;
+	padding-left: 45px !important;
+}
+.img-skype {
+	background: url(../img/icon-skype.png) no-repeat 0 7px;
+	padding-left: 45px !important;
+}
+.img-phone {
+	background: url(../img/icon-phone.png) no-repeat 0 7px;
+	padding-left: 45px !important;
+}
+.bordered-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.bordered-list li {
+	border-bottom: 1px solid #CCCBC9;
+	padding: 20px 0;
+	display: block;
+	float: none;
+	clear: both;
+}
+.bordered-list li.last {
+	border-bottom: 0px;
+}

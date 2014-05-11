@@ -1,0 +1,97 @@
+@CHARSET "UTF-8";
+body{
+	padding-top: 0px;
+	font: 12px/23px 宋体,tahoma,arial;
+	font-family: 微软雅黑;
+}
+.container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
+width: 1200px;
+}
+.table thead > tr > th, .table tbody > tr > th, .table tfoot > tr > th, .table thead > tr > td, .table tbody > tr > td, .table tfoot > tr > td {
+    vertical-align: middle;
+}
+li {
+    list-style-type: none;
+}
+.clearfix{display:block;}
+.under_line{text-decoration:underline;}
+.fl{float:left;}
+.fr{float:right;}
+
+.fb{font-weight:bold;}
+
+.org{color:#f60;}
+.gray{color:#999;}
+
+a {text-decoration:none; color:#333;}
+a:hover {text-decoration:none; color:#f60;}
+
+.area{width:1200px; margin:0px auto; text-align:left;}
+.price{font-family: Georgia,"Times New Roman",Times,serif;}
+
+.num{font-family:Arial, Helvetica, sans-serif;}
+
+.tc{text-align:center;}
+.tr{text-align:right;}
+.tl{text-align:left;}
+
+
+.font_wr{ font-family:'Microsoft Yahei';}
+
+
+.color_999{color:#999;}
+.color_666{color:#666;}
+.color_f63 {
+color: #f63;
+}
+
+.size_14{font-size:14px;}
+
+
+.mt10{margin-top:10px;}
+.mt20{margin-top:20px;}
+.mt40{margin-top:40px;}
+.mt90{margin-top:90px;}
+.mb10{margin-bottom:10px;}
+.mb20{margin-bottom:20px;}
+.mb30{margin-bottom:30px;}
+.mb50{margin-bottom:50px;}
+
+.mr10{margin-right:10px;}
+.mr20{margin-right:20px;}
+.mr30{margin-right:30px;}
+.mr50{margin-right:50px;}
+
+.ml10{margin-left:10px;}
+.ml20{margin-left:20px;}
+.ml30{margin-left:30px;}
+.ml50{margin-left:50px;}
+
+.mt10{margin-top:10px;}
+.mt15{margin-top:15px;}
+.mb10{margin-bottom:10px;}
+.mb30{margin-bottom:30px;}
+
+.fs14{font-size:14px;}
+.fs16{font-size:16px;}
+.fs18{font-size:18px;}
+.fs20{font-size:20px;}
+
+.fb{font-weight:bold;}
+
+.navbar .nav > li > a:focus, .navbar .nav > li > a:hover {
+	color: #51a351;
+}
+.title_bor {
+line-height: 30px;
+}
+img {
+vertical-align: top;
+border: 0;
+}
+.color_999 {
+    color: #999999;
+}
+.footer {
+	padding: 5px 0;
+	}

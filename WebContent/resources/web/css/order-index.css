@@ -1,0 +1,106 @@
+.ico20_rise, .ico20_decline, .ico_close, .ico20_exchange, .ico20_v_unfold, .ico20_comma_l, .ico20_comma_r {
+display: inline-block;
+overflow: hidden;
+text-indent: -9999em;
+background: url("../../../resources/web/images/buy/ico20_1113.png") no-repeat;
+z-index: 10;
+}
+.ico_close {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 20px;
+    height: 18px;
+    background-position: 0 -620px;
+}
+.ico_close:hover {
+    background-position: 0 -640px;
+}
+.shadow {
+    border: 1px solid #E8E8E8;
+    display: block;
+}
+
+.pay_order_list .pic {
+    border: 1px solid #EDF1F2;
+    display: inline-block;
+    height: 80px;
+    margin: 10px 10px 10px 3px;
+    overflow: hidden;
+    vertical-align: middle;
+    width: 80px;
+}
+.pay_cart_num {
+    border-color: #8A8A8A;
+    border-radius: 0;
+    border-style: solid;
+    border-width: 1px 0;
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    margin-left: -4px;
+    padding: 0 2px;
+    text-align: center;
+    vertical-align: middle;
+    width: 30px;
+}
+.pay_cart_plus,
+.pay_cart_minus {
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    border: 1px solid #8a8a8a;
+    display: inline-block;
+    vertical-align: middle;
+}
+.pay_cart_minus {
+    margin-left: -4px;
+}
+.pay_cart_plus:hover,
+.pay_cart_minus:hover {
+    background-color: #f5f5f5;
+}
+.pay_cart_list {
+    overflow: hidden;
+}
+.pay_cart_list .pos {
+    position: relative;
+}
+.pay_cart_list table {
+    margin-top: -1px;
+}
+.pay_cart_list tr .ico_close {
+    display: none;
+    _display: block;
+}
+.pay_cart_list tr:hover .ico_close {
+    display: block;
+}
+.pay_cart_list td {
+    border-color: #e8f1e8;
+    border-style: solid;
+    border-width: 1px 1px 0 0;
+}
+
+.shop-cart-count {
+position: relative;
+padding: 25px 20px;
+background-color: #f5f7fa;
+min-height: 100px;
+_height: 100px;
+}
+.shop-cart-total .total-price {
+color: #434a54;
+}
+.shop-cart-total .total-price span {
+color: #f84858;
+}
+.shop-cart-total .total-price span strong {
+display: inline-block;
+font-size: 30px;
+}
+
+.shop-cart-btns {
+padding: 20px 20px 20px;
+text-align: right;
+}
