@@ -29,50 +29,31 @@
 						</tr>
 					</thead>
 					<tbody>
-			   <c:if test="${goods!= null}">
-					<c:forEach var="good" varStatus="status" items="${goods}">
+			   <c:if test="${fightWeather!= null}">
 						<tr>
-							<td><span class="img"> <a
-									href="<c:url value="/web/goodDetail?goodId=${good.goodId}"/>">
-										<img width="69" height="43"
-										src="<c:url value="${good.logo}"/>"
-										alt="${good.name}">
-								</a>
-							</span></td>
 							<td>
-							 <p><h3>
-							 
-							 <c:if test="${good.statu==0 }">
-										 <span class="badge badge-success">销售中</span>
-										</c:if>
-										<c:if test="${good.statu==1 }">
-										  <span class="badge badge-danger">已卖</span>
-										</c:if>
-							 ${good.name }</h3> 
-							 
-							 </p>
-							 <p>${good.title}</p>
+							${fightWeather.currently.temperature}
 							</td>
-							<td class="tr"><span class="badge badge-danger">${good.price }</span>元</td>
+							<td>
+							 ${fightWeather.currently.visibility}
+							</td>
+							<td>
+							 ${fightWeather.currently.windSpeed}
+							</td>
+							<td>
+							 ${fightWeather.currently.cloudCover}
+							</td>
+							<td>
+							 ${fightWeather.currently.summary}
+							</td>
+							<td class="tr">
+							${fightWeather.currently.time}
+							</td>
 						</tr>
-						
-						
-						
-					</c:forEach>
 				</c:if>
 					
 					</tbody>
 				</table>
-		</div>
-		<div class="row">
-			<ul class="pager">
-			    <c:if test="${isPre==1 }">
-				<li class="previous"><a href="<c:url value="/web/partys"/>?curPage=${curPage-1}&pageSize=12">&larr; 上一页</a></li>
-				</c:if>
-				<c:if test="${isNext==1 }">
-				<li class="next"><a href="<c:url value="/web/partys"/>?curPage=${curPage+1}&pageSize=12">下一页 &rarr;</a></li>
-				</c:if>
-		   </ul>
 		</div>
     </div>
 </div>

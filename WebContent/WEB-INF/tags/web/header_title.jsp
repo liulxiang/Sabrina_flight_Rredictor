@@ -1,9 +1,9 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <meta charset="utf-8">
-<title>Whoopes</title>
+<title>taotaoti-fight-weahter</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Whoopes">
+<meta name="description" content="taotaoti-fight-weahter">
 <meta name="author" content="taotaoti 科技有限公司 ">
 <meta name="baidu-site-verification" content="BWkOw937jj" />
 <link href="<c:url value="/resources/css/bootstrap.min.css"/>" rel="stylesheet">

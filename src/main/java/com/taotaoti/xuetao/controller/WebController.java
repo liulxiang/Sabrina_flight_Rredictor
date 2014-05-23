@@ -14,13 +14,16 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.google.gson.Gson;
 import com.taotaoti.common.controller.BaseController;
+import com.taotaoti.common.httpclient.HttpClientUtils;
 import com.taotaoti.common.redis.RedisCacheManager;
 import com.taotaoti.common.vo.MatchMap;
 import com.taotaoti.common.web.session.SessionProvider;
 import com.taotaoti.member.dao.MemberDao;
 import com.taotaoti.member.dao.MessageDao;
 import com.taotaoti.member.service.MemberMgr;
+import com.taotaoti.weather.vo.FightWeather;
 
 @Controller
 public class WebController extends BaseController {
@@ -55,6 +58,11 @@ public class WebController extends BaseController {
 		if(curPage==null) curPage=0;
 		if(pageSize==null) pageSize=12;
 		if(categoryType==null) categoryType=2;
+		//https://api.flightstats.com/flex/schedules/rest/v1/json/flight/AA/1667/departing/2014/05/23?appId=c4daadf2&appKey=46aa77182c010799973f50085c877d71"
+		String josn=HttpClientUtils.getHtmlBody("https://api.forecast.io/forecast/1a4fbce4b6f79f5715b2b1a3f9777d10/37.46,-122.24");
+	    Gson gson=new Gson();
+	     FightWeather fightWeather=gson.fromJson(josn, FightWeather.class);
+	     listMaps.add(new MatchMap("fightWeather", fightWeather));
 		return this.buildSuccess(model, "/web/search", listMaps);
 	}
 	
