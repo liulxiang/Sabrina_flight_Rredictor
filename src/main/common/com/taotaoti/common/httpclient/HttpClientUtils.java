@@ -305,6 +305,8 @@ public class HttpClientUtils {
 					response.close();
 				}
 			}
+			System.out.println(sb.toString());
+			System.out.println(responseString);
 			logger.info(String.format("[HttpUtils Get]Debug url:%s , response string %s:", sb.toString(), responseString));
 		} catch (SocketTimeoutException e) {
 			logger.error(String.format("[HttpUtils Get]invoke get timout error, url:%s", sb.toString()), e);

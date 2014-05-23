@@ -24,36 +24,68 @@
 							<th>出发机场</th>
 							<th>gate No</th>
 							<th>计划出发</th>
-							<th>到达</th>
+							<th>到达机场</th>
+							<th>到达时间</th>
 							<th class="tr">实际出发到达时间</th>
 						</tr>
 					</thead>
 					<tbody>
-			   <c:if test="${fightWeather!= null}">
+			   <c:if test="${fightVo!= null}">
 						<tr>
 							<td>
-							${fightWeather.currently.temperature}
+							${fightVo.flightNumber}
 							</td>
 							<td>
-							 ${fightWeather.currently.visibility}
+							${fightVo.departureAirportFsCode}
 							</td>
 							<td>
-							 ${fightWeather.currently.windSpeed}
+							${fightVo.departureTerminal}
 							</td>
 							<td>
-							 ${fightWeather.currently.cloudCover}
+							${fightVo.departureTime}
 							</td>
 							<td>
-							 ${fightWeather.currently.summary}
+							 ${fightVo.arrivalAirportFsCode}
+							</td>
+							<td>
+							 ${fightVo.arrivalTime}
+							</td>
+							<td>
+							 ${fightVo.arrivalTerminal}
 							</td>
 							<td class="tr">
-							${fightWeather.currently.time}
+							${fightVo.departing}
 							</td>
 						</tr>
 				</c:if>
 					
 					</tbody>
 				</table>
+				
+				
+				 <c:if test="${fightWeather!= null}">
+						<tr>
+							<td>
+							temperature=${fightWeather.currently.temperature}
+							</td>
+							<td>
+							visibility= ${fightWeather.currently.visibility}
+							</td>
+							<td>
+							windSpeed= ${fightWeather.currently.windSpeed}
+							</td>
+							<td>
+							cloudCover= ${fightWeather.currently.cloudCover}
+							</td>
+							<td>
+							summary= ${fightWeather.currently.summary}
+							</td>
+							<td class="tr">
+							time=${fightWeather.currently.time}
+							</td>
+						</tr>
+				</c:if>
+			
 		</div>
     </div>
 </div>

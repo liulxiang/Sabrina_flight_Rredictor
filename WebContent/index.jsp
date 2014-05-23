@@ -38,14 +38,14 @@
 			
 						<div class="form-group">
 							<div class="col-md-2 control-label">
-								<label for="profile_company">Number：</label>
+								<label for="profile_company">fightNo：</label>
 							</div>
 							<div class="col-md-7 controls">
 								<input type="text" 
-									class="form-control" value="59" required="required"/>
+									class="form-control" value="59" required="required" name="fightNo"/>
 							</div>
 						</div>
-
+<!-- 
 						<div class="form-group">
 							<div class="col-md-2 control-label">
 								<label for="profile_job">Date：</label>
@@ -55,7 +55,7 @@
 									class="form-control" value="2014-05-08" required="required"/>
 							</div>
 						</div>
-						
+		 -->				
 
 						<div class="row">
 							<div class="col-md-7 col-md-offset-2">

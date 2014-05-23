@@ -691,6 +691,10 @@ public class DateUtils {
 		java.util.Date pdate = new Date();
 		return formatDate(pdate, "yyyyMMdd");
 	}
+	public static String formatCurrrentDate2() {
+		java.util.Date pdate = new Date();
+		return formatDate(pdate, "yyyy/MM/dd");
+	}
 
 	/**
 	 * 按照给定格式返回代表日期的字符串
@@ -1033,6 +1037,7 @@ public class DateUtils {
 		System.out.println(DateUtils.str_ToDate(content));
 		
 		System.out.println(DateUtils.parseDate("2014-03-23 17:28:18", "yyyy-MM-dd HH:mm:ss"));
+		System.out.println(DateUtils.formatCurrrentDate2());
 	}
 
 }
