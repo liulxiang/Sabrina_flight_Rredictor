@@ -1,44 +1,52 @@
 package com.taotaoti.weather.vo;
 
+import java.util.List;
+
 
 public class FightWeather {
-	float latitude;
-	float longitude;
-	String timezone;
-	int offset;
-	CurrentWeather  currently;
-	public FightWeather() {
-		// TODO Auto-generated constructor stub
+	String report;
+    String reportTime;
+    String observationTime;
+    String reportType;
+    String weatherStationIcao;
+	List<Forecast>  forecasts;
+	public String getReport() {
+		return report;
 	}
-	public float getLatitude() {
-		return latitude;
+	public void setReport(String report) {
+		this.report = report;
 	}
-	public void setLatitude(float latitude) {
-		this.latitude = latitude;
+	public String getReportTime() {
+		return reportTime;
 	}
-	public float getLongitude() {
-		return longitude;
+	public void setReportTime(String reportTime) {
+		this.reportTime = reportTime;
 	}
-	public void setLongitude(float longitude) {
-		this.longitude = longitude;
+	public String getObservationTime() {
+		return observationTime;
 	}
-	public String getTimezone() {
-		return timezone;
+	public void setObservationTime(String observationTime) {
+		this.observationTime = observationTime;
 	}
-	public void setTimezone(String timezone) {
-		this.timezone = timezone;
+	public String getReportType() {
+		return reportType;
 	}
-	public int getOffset() {
-		return offset;
+	public void setReportType(String reportType) {
+		this.reportType = reportType;
 	}
-	public void setOffset(int offset) {
-		this.offset = offset;
+	public String getWeatherStationIcao() {
+		return weatherStationIcao;
 	}
-	public CurrentWeather getCurrently() {
-		return currently;
+	public void setWeatherStationIcao(String weatherStationIcao) {
+		this.weatherStationIcao = weatherStationIcao;
 	}
-	public void setCurrently(CurrentWeather currently) {
-		this.currently = currently;
-	} 
+	public List<Forecast> getForecasts() {
+		return forecasts;
+	}
+	public void setForecasts(List<Forecast> forecasts) {
+		this.forecasts = forecasts;
+	}
+	
+	
 
 }

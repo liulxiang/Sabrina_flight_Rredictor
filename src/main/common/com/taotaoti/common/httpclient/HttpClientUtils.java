@@ -51,7 +51,7 @@ import org.slf4j.LoggerFactory;
 
 import com.google.gson.Gson;
 import com.taotaoti.common.utils.ObjToStringUtil;
-import com.taotaoti.weather.vo.FightWeather;
+import com.taotaoti.weather.vo.RequestWeatherVo;
 
 
 public class HttpClientUtils {
@@ -373,9 +373,13 @@ public class HttpClientUtils {
 	}
 	public static void main(String[] args) {
 		//HttpClientUtils.getHtmlBody("https://api.forecast.io/forecast/1a4fbce4b6f79f5715b2b1a3f9777d10/37.8267,-122.423");
-	String josn=	HttpClientUtils.getHtmlBody("https://api.forecast.io/forecast/1a4fbce4b6f79f5715b2b1a3f9777d10/37.8267,-122.423,2014-05-06T14:00:02");
+	 //   String josn=	HttpClientUtils.getHtmlBody("https://api.forecast.io/forecast/1a4fbce4b6f79f5715b2b1a3f9777d10/37.8267,-122.423,2014-05-06T14:00:02");
 		Gson gson=new Gson();
-		FightWeather fightWeather=gson.fromJson(josn, FightWeather.class);
-		System.out.println(ObjToStringUtil.objToString(fightWeather));
+		//FightWeather fightWeather=gson.fromJson(josn, FightWeather.class);
+		
+		String josn=HttpClientUtils.getHtmlBody("https://api.flightstats.com/flex/weather/rest/v1/json/all/sfo?appId=c4daadf2&appKey=46aa77182c010799973f50085c877d71");
+		RequestWeatherVo forecast=gson.fromJson(josn, RequestWeatherVo.class);
+	
+		System.out.println(ObjToStringUtil.objToString(forecast));
 	}
 }

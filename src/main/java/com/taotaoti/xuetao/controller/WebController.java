@@ -27,6 +27,8 @@ import com.taotaoti.member.dao.MemberDao;
 import com.taotaoti.member.dao.MessageDao;
 import com.taotaoti.member.service.MemberMgr;
 import com.taotaoti.weather.vo.FightWeather;
+import com.taotaoti.weather.vo.Forecast;
+import com.taotaoti.weather.vo.RequestWeatherVo;
 
 @Controller
 public class WebController extends BaseController {
@@ -65,13 +67,15 @@ public class WebController extends BaseController {
 		if(categoryType==null) categoryType=2;
 		String fightJson=null;
 		fightJson=HttpClientUtils.getHtmlBody("https://api.flightstats.com/flex/schedules/rest/v1/json/flight/AA/"+fightNo+"/departing/"+DateUtils.formatCurrrentDate2()+"?appId=c4daadf2&appKey=46aa77182c010799973f50085c877d71");
-		//https://api.flightstats.com/flex/schedules/rest/v1/json/flight/AA/1667/departing/2014/05/23?appId=c4daadf2&appKey=46aa77182c010799973f50085c877d71"
 		RequestFightVo fightVo=gson.fromJson(fightJson, RequestFightVo.class);
 		System.out.println(ObjToStringUtil.objToString(fightVo));
-		String josn=HttpClientUtils.getHtmlBody("https://api.forecast.io/forecast/1a4fbce4b6f79f5715b2b1a3f9777d10/37.46,-122.24");
-	   
-	     FightWeather fightWeather=gson.fromJson(josn, FightWeather.class);
-	     listMaps.add(new MatchMap("fightWeather", fightWeather));
+		String josn=HttpClientUtils.getHtmlBody("https://api.flightstats.com/flex/weather/rest/v1/json/all/sfo?appId=c4daadf2&appKey=46aa77182c010799973f50085c877d71");
+		RequestWeatherVo requestWeatherVo=gson.fromJson(josn, RequestWeatherVo.class);
+		
+//		RequestFightVo
+//		RequestWeatherVo
+		
+		listMaps.add(new MatchMap("fightWeather", requestWeatherVo));
 	     listMaps.add(new MatchMap("fightVo", fightVo.getScheduledFlights().get(0)));
 		return this.buildSuccess(model, "/web/search", listMaps);
 	}
