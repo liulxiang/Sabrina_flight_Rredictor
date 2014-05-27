@@ -12,6 +12,12 @@ public class Conditions {
 	public Wind getWind() {
 		return wind;
 	}
+	public List<SkyCondition> getSkyConditions() {
+		return skyConditions;
+	}
+	public void setSkyConditions(List<SkyCondition> skyConditions) {
+		this.skyConditions = skyConditions;
+	}
 	public void setWind(Wind wind) {
 		this.wind = wind;
 	}

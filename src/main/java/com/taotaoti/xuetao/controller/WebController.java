@@ -23,11 +23,10 @@ import com.taotaoti.common.utils.ObjToStringUtil;
 import com.taotaoti.common.vo.MatchMap;
 import com.taotaoti.common.web.session.SessionProvider;
 import com.taotaoti.fight.vo.RequestFightVo;
+import com.taotaoti.fwr.vo.RfwdateVo;
 import com.taotaoti.member.dao.MemberDao;
 import com.taotaoti.member.dao.MessageDao;
 import com.taotaoti.member.service.MemberMgr;
-import com.taotaoti.weather.vo.FightWeather;
-import com.taotaoti.weather.vo.Forecast;
 import com.taotaoti.weather.vo.RequestWeatherVo;
 
 @Controller
@@ -74,8 +73,10 @@ public class WebController extends BaseController {
 		
 //		RequestFightVo
 //		RequestWeatherVo
+		RfwdateVo rfwdateVo=new RfwdateVo(fightVo.getScheduledFlights().get(0), requestWeatherVo.getTaf());
+		//listMaps.add(new MatchMap("fightWeather", requestWeatherVo));
 		
-		listMaps.add(new MatchMap("fightWeather", requestWeatherVo));
+		
 	     listMaps.add(new MatchMap("fightVo", fightVo.getScheduledFlights().get(0)));
 		return this.buildSuccess(model, "/web/search", listMaps);
 	}

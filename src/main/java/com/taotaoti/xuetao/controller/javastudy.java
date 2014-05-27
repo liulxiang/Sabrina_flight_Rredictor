@@ -71,8 +71,6 @@ public class javastudy {
 		      code.addRCode(" lines(prediction,col=\"blue\",lwd=2)");
 		      code.addRCode(" write.table(prediction$y, file = \"/Users/sabrina/Downloads/eclipse/predictionairline.csv\", sep = \",\", col.names = NA,\n" + 
 		      		"            qmethod = \"double\")");
-		     
-		     
 		  
 		      code.endPlot();
 
@@ -84,7 +82,7 @@ public class javastudy {
 		       * We want to handle the list 'my.all'
 		       */
 		     
-		   //   caller.runAndReturnResult("my.all");
+		      //caller.runAndReturnResult("my.all");
 		
 		    }  catch (Exception e) {
 		        System.out.println(e.toString());
