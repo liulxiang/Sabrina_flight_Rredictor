@@ -35,6 +35,19 @@ public class MainCSV {
 	    }
 	    return cs;
 	}
+	public List<String[]> readStringCsv(String fileName) throws IOException{
+		File file=new File(fileName);
+		reader = new CSVReader(new FileReader(file));  
+	    String [] nextLine;  
+	    List<String[]> contents=new ArrayList<String[]>();
+	    while ((nextLine = reader.readNext()) != null) { 
+	    	if(nextLine!=null&&nextLine[0]!=null){
+	    		contents.add(nextLine);
+	    	}
+	    }  
+	    reader.close();
+	    return contents;
+	}
 	public static void main(String[] args) throws IOException {
 		MainCSV mainCSV=new MainCSV();
 		Double[] csv=mainCSV.readCsv("FlightNo/108.csv");

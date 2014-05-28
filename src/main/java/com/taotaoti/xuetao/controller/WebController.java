@@ -1,5 +1,6 @@
 package com.taotaoti.xuetao.controller;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,6 +20,7 @@ import com.taotaoti.common.controller.BaseController;
 import com.taotaoti.common.httpclient.HttpClientUtils;
 import com.taotaoti.common.redis.RedisCacheManager;
 import com.taotaoti.common.utils.DateUtils;
+import com.taotaoti.common.utils.MainCSV;
 import com.taotaoti.common.utils.ObjToStringUtil;
 import com.taotaoti.common.vo.MatchMap;
 import com.taotaoti.common.web.session.SessionProvider;
@@ -77,8 +79,31 @@ public class WebController extends BaseController {
 		//listMaps.add(new MatchMap("fightWeather", requestWeatherVo));
 		
 		
-	     listMaps.add(new MatchMap("fightVo", fightVo.getScheduledFlights().get(0)));
+		listMaps.add(new MatchMap("fightVo", fightVo.getScheduledFlights().get(0)));
+	     listMaps.add(new MatchMap("todayRData", getRResult()));
+	     
+	     
 		return this.buildSuccess(model, "/web/search", listMaps);
+	}
+	public String getRResult(){
+		String todayData=null;
+		MainCSV mainCSV=new MainCSV();
+		try {
+			List<String[]> dates=mainCSV.readStringCsv("/Users/sabrina/Downloads/eclipse/predictionairline.csv");
+			if(dates.size()>=2){
+				String[] tempData=dates.get(1);
+				if(tempData.length==1){
+					String temp[]=tempData[0].split(",");
+					todayData=temp[1];
+				}
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return todayData;
+		
 	}
 	
 	
