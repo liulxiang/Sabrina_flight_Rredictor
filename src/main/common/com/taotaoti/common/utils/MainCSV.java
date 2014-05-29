@@ -16,7 +16,7 @@ public class MainCSV {
 	 * @return
 	 * @throws IOException 
 	 */
-	public Double[] readCsv(String fileName) throws IOException{
+	public double[] readCsv(String fileName) throws IOException{
 		File file=new File(fileName);
 		System.out.println(file.getAbsolutePath());
 		reader = new CSVReader(new FileReader(file));  
@@ -24,12 +24,12 @@ public class MainCSV {
 	    List<Double> contents=new ArrayList<Double>();
 	    while ((nextLine = reader.readNext()) != null) { 
 	    	if(nextLine!=null&&nextLine[0]!=null){
-	    		Double temp=Double.valueOf(nextLine[0]);
+	    		double temp=Double.valueOf(nextLine[0]);
 	    		contents.add(temp);
 	    	}
 	    }  
 	    reader.close();
-	    Double[] cs=new Double[contents.size()]; 
+	    double[] cs=new double[contents.size()]; 
 	    for(int i=0;i<contents.size();i++){
 	    	cs[i]=contents.get(i);
 	    }
@@ -50,7 +50,9 @@ public class MainCSV {
 	}
 	public static void main(String[] args) throws IOException {
 		MainCSV mainCSV=new MainCSV();
-		Double[] csv=mainCSV.readCsv("FlightNo/108.csv");
+		double[] csv=mainCSV.readCsv("/Users/liulxiang/sabrina/FlightNo/108.csv");
+		System.out.println(csv.length);
+		System.out.println(csv[1]);
 		System.out.println(ObjToStringUtil.objToString(csv));
 	}
 

@@ -6,8 +6,6 @@ import com.taotaoti.fight.vo.FightVo;
 import com.taotaoti.weather.vo.FightWeather;
 
 public class RfwdateVo {
-	//#风速
-	//x1=speedknots+3.88
 float x1=3.88f;
 float x2;
 float x3;

@@ -72,44 +72,24 @@ public class WebController extends BaseController {
 		System.out.println(ObjToStringUtil.objToString(fightVo));
 		String josn=HttpClientUtils.getHtmlBody("https://api.flightstats.com/flex/weather/rest/v1/json/all/sfo?appId=c4daadf2&appKey=46aa77182c010799973f50085c877d71");
 		RequestWeatherVo requestWeatherVo=gson.fromJson(josn, RequestWeatherVo.class);
-		
-//		RequestFightVo
-//		RequestWeatherVo
 		RfwdateVo rfwdateVo=new RfwdateVo(fightVo.getScheduledFlights().get(0), requestWeatherVo.getTaf());
-		//listMaps.add(new MatchMap("fightWeather", requestWeatherVo));
-		
 		
 		listMaps.add(new MatchMap("fightVo", fightVo.getScheduledFlights().get(0)));
-	     listMaps.add(new MatchMap("todayRData", getRResult()));
-	     
-	     
+		/**
+		 * 根据航班号 通过R 生产测试数据
+		 */
+		RSabrinaUtil.dealDataByFilghtNo(fightNo);
+		/**
+		 * wd
+		 */
+		float wd=rfwdateVo.getWd();
+		float r= RSabrinaUtil.getRResult();
+	    listMaps.add(new MatchMap("todayRData",r));
+	    listMaps.add(new MatchMap("wd", wd));
+	    listMaps.add(new MatchMap("delay", wd+r));
+	    
 		return this.buildSuccess(model, "/web/search", listMaps);
 	}
-	public String getRResult(){
-		String todayData=null;
-		MainCSV mainCSV=new MainCSV();
-		try {
-			List<String[]> dates=mainCSV.readStringCsv("/Users/sabrina/Downloads/eclipse/predictionairline.csv");
-			if(dates.size()>=2){
-				String[] tempData=dates.get(1);
-				if(tempData.length==1){
-					String temp[]=tempData[0].split(",");
-					todayData=temp[1];
-				}
-			}
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		return todayData;
-		
-	}
-	
-	
-	
-	
-	
 	public SessionProvider getSession() {
 		return session;
 	}
